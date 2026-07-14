@@ -1,26 +1,3 @@
-Wabi docs
-Matcha
-
-Search
-⌘K
-
-Connect
-
-Getting started
-Functions
-Globals
-Console & input
-Miscellaneous & scheduler
-Memory
-Garbage collector
-File system
-HTTP
-Lua base library
-Reference
-Classes
-Datatypes
-Drawing
-Matcha / Functions / Globals
 Globals #
 loadstring / load #
 lua
@@ -133,50 +110,7 @@ lua
 Copy
 local sandbox = { print = print }
 setfenv(f, sandbox) -- f now only sees `sandbox` as its globals
-Previous
-Getting started
-Next
-Console & input
-On this page
-loadstring / load
-decompile
-WorldToScreen
-notify
-identifyexecutor
-getscripthash
-getgamename
-getscripts
-getscriptbytecode
-base64encode
-base64decode
-GetPingValue
-tick
-typeof
-getfenv
-setfenv
-Wabi docs
-Matcha
 
-Search
-⌘K
-
-Connect
-
-Getting started
-Functions
-Globals
-Console & input
-Miscellaneous & scheduler
-Memory
-Garbage collector
-File system
-HTTP
-Lua base library
-Reference
-Classes
-Datatypes
-Drawing
-Matcha / Functions / Console & input
 Console & input #
 Console #
 print / printl #
@@ -310,57 +244,6 @@ Copy
 function mousescroll(amount: int): nil
 Scrolls the mouse wheel by amount; the sign sets the direction.
 
-Previous
-Globals
-Next
-Miscellaneous & scheduler
-On this page
-Console
-print / printl
-warn
-error
-errorl
-Input
-setrobloxinput
-isrbxactive
-setclipboard
-keypress
-keyrelease
-iskeypressed
-ismouse1pressed
-ismouse2pressed
-mouse1press
-mouse1release
-mouse1click
-mouse2press
-mouse2release
-mouse2click
-mousemoveabs
-mousemoverel
-mousescroll
-Wabi docs
-Matcha
-
-Search
-⌘K
-
-Connect
-
-Getting started
-Functions
-Globals
-Console & input
-Miscellaneous & scheduler
-Memory
-Garbage collector
-File system
-HTTP
-Lua base library
-Reference
-Classes
-Datatypes
-Drawing
-Matcha / Functions / Miscellaneous & scheduler
 Miscellaneous & scheduler #
 run_secure #
 lua
@@ -432,44 +315,6 @@ Copy
 function task.wait(time: number?)
 Yields the current thread for time seconds, or until the next frame if time is omitted. Returns nothing — unlike Roblox's task.wait, which returns the elapsed time.
 
-Previous
-Console & input
-Next
-Memory
-On this page
-run_secure
-Set Fast Flag
-Get Fast Flag
-require
-wait
-spawn
-task.spawn
-task.defer
-task.delay
-task.wait
-Wabi docs
-Matcha
-
-Search
-⌘K
-
-Connect
-
-Getting started
-Functions
-Globals
-Console & input
-Miscellaneous & scheduler
-Memory
-Garbage collector
-File system
-HTTP
-Lua base library
-Reference
-Classes
-Datatypes
-Drawing
-Matcha / Functions / Memory
 Memory #
 You must allow unsafe LuaU execution before using these functions
 
@@ -501,38 +346,6 @@ Copy
 memory_read(memoryType: string, address: int): Any
 Reads the value of type memoryType at address (see the Memory Types table). byte is 0–255, int a signed 32-bit integer, uintptr_t an unsigned 64-bit value, and float/double reinterpret the raw bytes. Reading an unmapped address safely returns 0. The string type reads bytes until the first non-printable one (no length argument).
 
-Previous
-Miscellaneous & scheduler
-Next
-Garbage collector
-On this page
-Memory Types
-getbase
-memory_write
-memory_read
-Wabi docs
-Matcha
-
-Search
-⌘K
-
-Connect
-
-Getting started
-Functions
-Globals
-Console & input
-Miscellaneous & scheduler
-Memory
-Garbage collector
-File system
-HTTP
-Lua base library
-Reference
-Classes
-Datatypes
-Drawing
-Matcha / Functions / Garbage collector
 Garbage collector #
 These functions find and modify values held in the game's Lua garbage collector by name, such as weapon stats and other values stored in Lua tables.
 
@@ -585,37 +398,7 @@ applygc(cache, "MagAmmo", 999999)
 
 -- group
 applygc(cache, { FireRate = 0, SpreadAngle = 0, MagAmmo = 999999 })
-Previous
-Memory
-Next
-File system
-On this page
-getgc
-setgc
-applygc
-Wabi docs
-Matcha
 
-Search
-⌘K
-
-Connect
-
-Getting started
-Functions
-Globals
-Console & input
-Miscellaneous & scheduler
-Memory
-Garbage collector
-File system
-HTTP
-Lua base library
-Reference
-Classes
-Datatypes
-Drawing
-Matcha / Functions / File system
 File system #
 Paths are relative to the Matcha workspace folder (e.g. C:\matcha\workspace\). / and \ are interchangeable, and paths are case-insensitive.
 
@@ -680,43 +463,6 @@ Copy
 function delfolder(path: string): boolean
 Recursively deletes the folder (or file) at path and everything inside it. Always returns true, even if path did not exist.
 
-Previous
-Garbage collector
-Next
-HTTP
-On this page
-writefile
-readfile
-appendfile
-makefolder
-isfile
-isfolder
-listfiles
-delfile
-delfolder
-Wabi docs
-Matcha
-
-Search
-⌘K
-
-Connect
-
-Getting started
-Functions
-Globals
-Console & input
-Miscellaneous & scheduler
-Memory
-Garbage collector
-File system
-HTTP
-Lua base library
-Reference
-Classes
-Datatypes
-Drawing
-Matcha / Functions / HTTP
 HTTP #
 httpget and httppost are synchronous — they block until the response arrives and return the response body as a string. They never raise an error: an HTTP error status (e.g. 404) returns the server's response body, and a connection failure (e.g. an unreachable host) returns an empty string. They are the global equivalents of game:HttpGet / game:HttpPost.
 
@@ -741,36 +487,7 @@ Sends a POST request to url with body and returns the response body. contentType
 lua
 Copy
 local resp = httppost("https://example.com/api", '{"action":"ping"}', "application/json")
-Previous
-File system
-Next
-Lua base library
-On this page
-httpget
-httppost
-Wabi docs
-Matcha
 
-Search
-⌘K
-
-Connect
-
-Getting started
-Functions
-Globals
-Console & input
-Miscellaneous & scheduler
-Memory
-Garbage collector
-File system
-HTTP
-Lua base library
-Reference
-Classes
-Datatypes
-Drawing
-Matcha / Functions / Lua base library
 Lua base library #
 Matcha runs on a Luau-based VM, so the standard Lua(U) global functions are available and behave per the Lua 5.1 reference except where noted below. This page lists what the VM actually exposes and flags the Matcha-specific differences — it does not re-document standard Lua semantics.
 
@@ -859,65 +576,6 @@ function rawequal(a: any, b: any): boolean
 function rawlen(t: table | string): number
 Standard. These bypass metamethods; rawset returns the table.
 
-Memory #
-gcinfo #
-lua
-Copy
-function gcinfo(): number
-Returns the VM's current memory usage in kilobytes.
-
-Previous
-HTTP
-Next
-Classes
-On this page
-Type & conversion
-type
-tostring
-tonumber
-Iteration & varargs
-pairs / ipairs / next
-select
-unpack
-Errors & protected calls
-assert
-pcall
-xpcall
-Metatables
-setmetatable / getmetatable
-newproxy
-Raw access
-rawget / rawset / rawequal / rawlen
-Memory
-gcinfo
-Wabi docs
-Matcha
-
-Search
-⌘K
-
-Connect
-
-Getting started
-Functions
-Globals
-Console & input
-Miscellaneous & scheduler
-Memory
-Garbage collector
-File system
-HTTP
-Lua base library
-Reference
-Classes
-Datatypes
-Drawing
-Matcha / Reference / Classes
-Classes #
-BasePart #
-https://create.roblox.com/docs/reference/engine/classes/BasePart
-
-Properties
 
 Size #
 lua
@@ -1262,111 +920,6 @@ Fires every frame, prior to the physics simulation step. Passes the time elapsed
 
 In the Matcha VM, the Stepped event only receives one argument (deltaTime: number), unlike the standard Roblox API which receives both time and deltaTime.
 
-Previous
-Lua base library
-Next
-Datatypes
-On this page
-BasePart
-Size
-Position
-Transparency
-Color
-Velocity
-AssemblyLinearVelocity
-CanCollide
-Camera
-lookAt
-ViewportSize
-FieldOfView
-Position
-DataModel
-PlaceId
-GameId
-JobId
-HttpGet
-HttpPost
-GetService
-HttpService
-JSONEncode
-JSONDecode
-GenerateGUID
-Humanoid
-MaxHealth
-Health
-Model
-PrimaryPart
-Workspace
-CurrentCamera
-Instance
-Name
-ClassName
-Parent
-Address
-FindFirstChildOfClass
-FindFirstChild
-IsA
-GetFullName
-GetChildren
-GetAttribute
-GetAttributes
-SetAttribute
-GetDescendants
-IsDescendantOf
-FindFirstChildWhichIsA
-WaitForChild
-Mouse
-X
-Y
-Players
-LocalPlayer
-GetPlayers
-PlayerAdded
-PlayerRemoving
-Player
-Character
-Team
-GetMouse
-ValueBase
-Value
-GuiObject
-AbsoluteSize
-AbsolutePosition
-TextLabel
-Text
-MeshPart
-TextureId
-MeshId
-UserInputService
-InputBegan
-InputEnded
-RunService
-RenderStepped
-Heartbeat
-Stepped
-Wabi docs
-Matcha
-
-Search
-⌘K
-
-Connect
-
-Getting started
-Functions
-Globals
-Console & input
-Miscellaneous & scheduler
-Memory
-Garbage collector
-File system
-HTTP
-Lua base library
-Reference
-Classes
-Datatypes
-Drawing
-Matcha / Reference / Datatypes
 Datatypes #
 Vector3 #
 https://create.roblox.com/docs/reference/engine/datatypes/Vector3
@@ -1728,89 +1281,7 @@ B #
 lua
 Copy
 Color3.B: number
-Previous
-Classes
-Next
-Drawing
-On this page
-Vector3
-new
-zero
-one
-xAxis
-yAxis
-zAxis
-X
-Y
-Z
-Magnitude
-Unit
-Abs
-Angle
-Ceil
-Cross
-Dot
-Floor
-FuzzyEq
-Lerp
-Max
-Min
-Sign
-CFrame
-new
-Angles
-fromOrientation
-X
-Y
-Z
-Position
-LookVector
-RightVector
-UpVector
-GetComponents
-Inverse
-Lerp
-PointToObjectSpace
-PointToWorldSpace
-ToEulerAnglesXYZ
-ToOrientation
-VectorToObjectSpace
-VectorToWorldSpace
-Vector2
-new
-X
-Y
-Color3
-new
-fromRGB
-fromHSV
-fromHex
-R
-G
-B
-Wabi docs
-Matcha
 
-Search
-⌘K
-
-Connect
-
-Getting started
-Functions
-Globals
-Console & input
-Miscellaneous & scheduler
-Memory
-Garbage collector
-File system
-HTTP
-Lua base library
-Reference
-Classes
-Datatypes
-Drawing
-Matcha / Reference / Drawing
 Drawing #
 The following snippet will display a red square on the user's screen for 5 seconds.
 
@@ -1972,34 +1443,4 @@ Drawing.Fonts.Minecraft  -- Minecraft
 Drawing.Fonts.Monospace  -- JetBrains
 Drawing.Fonts.Pixel      -- Pixel
 Drawing.Fonts.Fortnite   -- Fortnite
-Previous
-Datatypes
-On this page
-Drawing.new
-DrawingObject
-Remove
-Color
-Transparency
-Visible
-Position
-ZIndex
-Size
-Filled
-From
-To
-Thickness
-Radius
-NumSides
-Thickness
-Text
-Outline
-Center
-Font
-FontSize
-PointA
-PointB
-PointC
-Data
-Image Size
-Rounding
-Fonts
+
